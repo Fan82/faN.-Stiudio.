@@ -1,0 +1,1593 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Heebo:wght@100;300&display=swap');
+
+@font-face {
+    font-family: "Noto Sans TC", 'Heebo', 'EB Garamond', 'Noto Serif TC', serif;
+    src: url(./webfont/Heebo-VariableFont_wght.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+a,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    color: #44423b;
+    vertical-align: baseline;
+    background: transparent;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* 共用 */
+body {
+    color: #eae4df;
+    font-family: "Noto Sans TC", 'Heebo', 'EB Garamond', 'Noto Serif TC', serif;
+}
+
+nav a {
+    color: #44423b;
+    text-decoration: none;
+}
+
+section {
+    position: relative;
+}
+
+h2 {
+    font-size: 4rem;
+    font-family: 'EB Garamond', 'Noto Serif TC', serif;
+}
+
+h3 {
+    font-size: 1.7rem;
+    font-family: 'EB Garamond', 'Noto Serif TC', serif;
+}
+
+h4 {
+    font-size: 24px;
+    font-family: 'EB Garamond', 'Noto Serif TC', serif;
+}
+
+p {
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+a {
+    cursor: pointer;
+    color: #211f17;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ------------------- */
+/* header */
+/* ------------------- */
+header {
+    position: relative;
+}
+
+.header_nav {
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    padding: 0 60px;
+    z-index: 999;
+}
+
+header h1 {
+    width: 70px;
+    position: absolute;
+    margin: 13px auto 5px auto;
+    z-index: 999;
+}
+
+/* phone*/
+@media (max-width: 767px) {
+    .header_nav {
+        padding: 10px;
+    }
+
+    header h1,
+    .nav-item {
+        display: none;
+    }
+}
+
+/* iPad */
+@media (min-width: 768px) {
+    .header_nav {
+        padding: 10px 30px;
+    }
+
+    header h1 {
+        width: 60px;
+        margin: 10px auto;
+    }
+
+    .nav_s {
+        display: none;
+    }
+}
+
+/* PC */
+@media (min-width: 992px) {
+    .nav_s {
+        display: none;
+    }
+}
+
+.nav_menu a {
+    border: 1px solid transparent;
+}
+
+.nav-item {
+    font-weight: 400;
+    letter-spacing: .04rem;
+    position: relative;
+    top: 40px;
+}
+
+.nav-item ul {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.nav_menu {
+    display: inline-block;
+}
+
+
+.nav_btnA,
+.nav_btnP,
+.nav_btnC {
+    font-size: 15px;
+    color: #211f17;
+    letter-spacing: 2px;
+    margin: 10px;
+    display: inline-block;
+    position: relative;
+}
+
+.nav_btnA:hover::after,
+.nav_btnP:hover::after,
+.nav_btnC:hover::after {
+    width: 100%;
+}
+
+.nav_btnA::after,
+.nav_btnP::after,
+.nav_btnC::after {
+    content: "";
+    width: 0;
+    height: 1px;
+    background-color: #211f17;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: width 0.3s;
+}
+
+.container {
+    position: relative;
+}
+
+.about_big {
+    position: relative;
+    display: inline-block;
+    padding: 0 50px;
+}
+
+.about_name {
+    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr;
+}
+
+.about_big p {
+    font-size: 10rem;
+    font-weight: bold;
+    opacity: .04;
+    letter-spacing: -.01em;
+    line-height: 1.2;
+}
+
+/* phone*/
+@media (max-width: 767px) {
+    .about_big p {
+        font-size: 4rem;
+    }
+
+    .about_name h2 {
+        font-size: 2rem;
+    }
+
+    .about_name p {
+        font-size: 14px;
+        text-align: end;
+    }
+
+    .about_fav h4 span {
+        font-size: 16px;
+    }
+}
+
+/* -----code pen nav bar----- */
+
+#menuToggle {
+    display: block;
+    position: relative;
+    top: 50px;
+    left: 20px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#menuToggle a {
+    text-decoration: none;
+}
+
+#menuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+
+
+    opacity: 0;
+    z-index: 2;
+
+    -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #7c7c7c;
+    border-radius: 3px;
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked~span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+}
+
+#menuToggle input:checked~span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked~span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+    position: absolute;
+    margin: -80px;
+    padding: 90px;
+
+    background: rgba(255, 255, 255, 0.87);
+    -webkit-font-smoothing: antialiased;
+
+    transform: translate(-500%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#menu li {
+    padding: 10px 0;
+}
+
+#menu li:hover {
+    border-bottom: 1px solid #211f17;
+}
+
+#menuToggle input:checked~ul {
+    transform: none;
+}
+
+/* -----end code pen nav----- */
+
+
+/* ------------------- */
+/* main banner */
+/* ------------------- */
+.wrapper_home {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper_con {
+    width: 100%;
+    height: 92vh;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 110px;
+}
+
+.wrapper {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 110px;
+}
+
+.main_banner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.main_content {
+    width: 100%;
+    font-size: 1.4rem;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}
+
+.typing-demo {
+    width: 11ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid;
+    font-family: 'Heebo', serif;
+
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+.main_banner img {
+    height: 91vh;
+    opacity: .3;
+}
+
+
+
+
+/* ------------------- */
+/* about */
+/* ------------------- */
+.about_inner {
+    width: 80%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.about_fav {
+    display: inline-block;
+    margin: 10px auto;
+}
+
+.about_fav h4 {
+    font-size: 20px;
+    margin: 10px auto;
+}
+
+.about_fav h4 span {
+    padding: 5px;
+    font-family: 'Heebo', 'Noto Serif TC', serif;
+}
+
+.about_icon {
+    display: flex;
+    flex-direction: row;
+}
+
+.icon {
+    width: 32px;
+    margin: 5px;
+}
+
+.bg_video {
+    width: 54%;
+    margin: 10px 0 30px 0;
+    opacity: .2;
+    filter: blur(4);
+}
+
+.bg_video video {
+    /* 寬高都要設定100%，cover偵測比例決定套用寬或高的100% */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* phone*/
+@media (max-width: 767px) {
+    .container {
+        padding-top: 10px;
+    }
+}
+
+/* iPad 平板會包含桌機版，因此桌機版要注意重新設定 */
+@media (min-width: 768px) {
+    .about_inner {
+        flex-direction: row;
+    }
+}
+
+/* PC */
+@media (min-width: 992px) {}
+
+/* ----------------------
+about02
+--------------------------*/
+
+.timeline {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 700px;
+    position: relative;
+}
+
+.timeline__content-title {
+    margin: 20px 0;
+    transition: 0.9s;
+    color: #7c7c7c;
+    border-bottom: 1px solid#7c7c7c69;
+    padding-bottom: 10px;
+}
+
+.timeline__content-desc {
+    font-size: 15px;
+    line-height: 25px;
+    padding: 10px 0;
+    letter-spacing: 1px;
+}
+
+.timeline__content span {
+    font-size: 12px;
+    color: #7c7c7c;
+}
+
+.timeline:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    margin-left: -1px;
+    background-color: #e6e6e6;
+
+}
+
+@media only screen and (max-width: 767px) {
+    .timeline:before {
+        left: 40px;
+    }
+
+    .bg_video {
+        width: 100%;
+        margin: 20px auto;
+    }
+}
+
+.timeline-item {
+    padding: 74px 0;
+    opacity: 0.3;
+    transition: 0.9s;
+    width: calc(50% - 40px);
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.timeline-item:before {
+    content: attr(data-text);
+    letter-spacing: 3px;
+    width: 100%;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    border-left: 2px solid rgba(22, 22, 22, 0.5);
+    top: 70%;
+    margin-top: -5px;
+    padding-left: 15px;
+    opacity: 0;
+    right: calc(-100% - 56px);
+}
+
+.timeline-item:nth-child(even) {
+    align-self: flex-end;
+}
+
+.timeline-item:nth-child(even):before {
+    right: auto;
+    text-align: right;
+    left: calc(-100% - 56px);
+    padding-left: 0;
+    border-left: none;
+    border-right: 2px solid rgba(109, 108, 108, 0.5);
+    padding-right: 15px;
+}
+
+.timeline-item--active {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+}
+
+.timeline-item--active:before {
+    top: 50%;
+    transition: 0.3s all 0.2s;
+    opacity: 1;
+    color: #44423b;
+    background-color: transparent;
+    line-height: 2;
+}
+
+@media only screen and (max-width: 767px) {
+    .timeline-item {
+        align-self: baseline !important;
+        width: 100%;
+        padding: 0 30px 150px 120px;
+    }
+
+    .timeline-item:before {
+        left: 10px !important;
+        padding: 0 !important;
+        top: 50px;
+        text-align: center !important;
+        width: 60px;
+        border: none !important;
+        background-color: #fff;
+    }
+}
+
+.timeline-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: 0.3s ease 0s;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.timeline-container:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+}
+
+
+
+/* ------------------- */
+/* project nav */
+/* ------------------- */
+.p_menu {
+    position: relative;
+}
+
+.p_menu ul {
+    display: flex;
+    justify-content: center;
+}
+
+.p_menu li {
+    padding: 0 40px;
+    height: 40px;
+}
+
+.p_menu li a {
+    font-size: 1.2rem;
+    line-height: 35px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    font-weight: lighter;
+    border: 1px solid transparent;
+}
+
+.p_menu li a:hover {
+    font-weight: normal;
+    color: #211f17;
+}
+
+
+/* phone*/
+@media (max-width: 767px) {
+    .p_menu li {
+        padding: 0 10px;
+    }
+
+    .p_menu li a {
+        font-size: 12px;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        font-weight: lighter;
+        border: 1px solid transparent;
+    }
+}
+
+
+/* ------------------- */
+/* project */
+/* ------------------- */
+.p_ui,
+.p_gd {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.p_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.p_info p {
+    font-size: 12px;
+    margin: 12px 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #949084;
+}
+
+.p_ui_img {
+    width: 60%;
+}
+
+.p_web_img,
+.p_gd_img {
+    width: 40%;
+}
+
+.p_web {
+    display: flex;
+    align-items: flex-end;
+    margin: 50px;
+}
+
+.p_web .p_info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 40px 40px 0 40px;
+}
+
+.info_btn a {
+    color: #fff;
+    background-color: #211f17;
+    line-height: 2;
+    font-size: 12px;
+    padding: 5px 10px;
+}
+
+.info_btn a:hover {
+    color: #fff;
+    background-color: #949084;
+}
+
+@media (max-width: 767px) {
+
+    .p_ui,
+    .p_gd,
+    .p_web {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0;
+        margin: 10px auto;
+    }
+
+    .p_ui .p_info,
+    .p_gd .p_info,
+    .p_web .p_info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 10px auto;
+    }
+
+    .p_ui_img,
+    .p_web_img,
+    .p_gd_img {
+        width: 100%;
+    }
+}
+
+/* iPad 平板會包含桌機版，因此桌機版要注意重新設定 */
+@media (min-width: 768px) {
+    .p_gd_img {
+        width: 60%;
+    }
+}
+
+/* PC */
+@media (min-width: 992px) {
+    .p_gd_img {
+        width: 60%;
+        display: inline;
+    }
+}
+
+/* ------------------- */
+/* UI */
+/* ------------------- */
+.gallery {
+    position: relative;
+    display: flex;
+    margin: 40px;
+    flex-direction: column;
+}
+
+.ui_info {
+    margin: 40px 0;
+}
+
+.ui_info h2 {
+    margin: 10px auto;
+}
+
+.ui_info p {
+    font-size: 20px;
+}
+
+.masonry {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.masonry img {
+    width: 48%;
+    margin: 5px;
+}
+
+.masonry:hover img {
+    opacity: 1;
+}
+
+.masonry:hover img:hover {
+    filter: contrast(70%) grayscale(20%);
+    cursor: pointer;
+}
+
+/* fallback for earlier versions of Firefox */
+
+@supports not (flex-wrap: wrap) {
+    .masonry {
+        display: block;
+    }
+
+    .masonry img {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+/* phone */
+@media (max-width: 767px) {
+    .ui_info h2 {
+        font-size: 30px;
+    }
+
+    .ui_info p {
+        font-size: 13px;
+    }
+
+    .masonry img {
+        width: 100%;
+    }
+}
+
+/* ------------------- */
+/* page UI*/
+/* ------------------- */
+.page_main {
+    margin: 60px 80px 10px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.page_main h2,
+.page_info h3,
+figure p {
+    font-size: 3rem;
+    letter-spacing: 1.5px;
+    margin-top: 25px;
+    line-height: 100px;
+}
+
+.page_main p {
+    text-align: center;
+    font-weight: lighter;
+    color: #848484;
+    margin-bottom: 80px;
+}
+
+.page_second {
+    display: flex;
+    align-items: center;
+    margin: 40px;
+}
+
+.page_info_picture {
+    width: 75%;
+}
+
+.page_second_ui05 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 100px auto;
+    padding: 40px;
+}
+
+.page_second_ui05 img {
+    box-shadow: 10px 20px 20px rgba(97, 97, 97, 0.2);
+    padding: 20px;
+}
+
+.page_info_s {
+    color: #211f17;
+    width: 500px;
+    padding: 20px;
+}
+
+.info_list_tit {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    font-size: 1.6rem;
+    border-bottom: 1px solid #44423b;
+}
+
+.page_third {
+    background-color: #eae4df7c;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.page_info_picture_s {
+    width: 70%;
+    margin: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.page_info_picture_s_ui01 {
+    width: 40%;
+    margin: 60px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-shadow: 10px 20px 20px rgba(97, 97, 97, 0.2);
+}
+
+.page_info_picture_s img {
+    width: 100%;
+    margin: 20px;
+}
+
+
+/* phone*/
+@media (max-width: 767px) {
+    .page_main {
+        margin: 0;
+        padding-bottom: 0px;
+    }
+
+    .page_main h2,
+    .page_info h3,
+    figure p,
+    .baygo_typo h3 {
+        font-size: 1.5rem;
+        text-align: center;
+        letter-spacing: 0px;
+        margin-top: 0px;
+        line-height: 2;
+    }
+
+    .page_main p {
+        font-size: 14px;
+        width: 333px;
+        margin-bottom: 40px;
+    }
+
+    .page_second {
+        display: flex;
+        align-items: center;
+        margin: 30px auto;
+        flex-direction: column;
+    }
+
+    .page_info_s {
+        width: 300px;
+    }
+
+    .page_info_picture,
+    .page_info_picture_s {
+        width: 100%;
+        margin: 0;
+    }
+
+    .page_info_s h4 {
+        text-align: center;
+        border-bottom: 1px solid #7c7c7c;
+        padding-bottom: 10px;
+    }
+
+    .page_third {
+        margin: 0;
+    }
+
+    .page_info_picture_s_ui01,
+    .page_info_picture_web {
+        width: 50%;
+        margin: 20px;
+    }
+
+    .page_second_ui05 {
+        margin: 0 auto;
+    }
+
+    .page_second_ui05 img {
+        padding: 10px;
+    }
+
+    .gd_gallery_wrapper {
+        width: 100%;
+    }
+
+    .gd_box {
+        width: 54%;
+    }
+
+    .gd_gallery03 h3 {
+        width: 100%;
+        text-align: center;
+        line-height: 1;
+        font-weight: normal;
+        font-size: 10px;
+        background-color: #f0edeb5b;
+
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .gd_wrapper {
+        margin: 0 auto;
+        width: 90%;
+        max-width: 92rem;
+        position: relative;
+    }
+
+    .baygo_gd {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    .typo_info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .font_name {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .font_w {
+        line-height: 2;
+        letter-spacing: 2px;
+        background-color: #B58F55;
+        padding: 3px;
+        text-align: center;
+        width: 211px;
+    }
+
+    .par_box {
+        width: 300px;
+        margin: 20px auto;
+        font-family: 'Minion Variable Concept';
+        font-weight: normal;
+    }
+
+    .par_box p {
+        font-size: 10px;
+    }
+
+    .color_list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .baygo_color {
+        line-height: 2;
+        margin: 5px 80px;
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        /* 一比一的分割*/
+    }
+
+    .font_box .font {
+        font-size: 5rem;
+        color: #B58F55;
+        font-family: 'Minion Variable Concept';
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .baygo_typo {
+        padding-bottom: 20px;
+    }
+
+}
+
+/* iPad 平板會包含桌機版，因此桌機版要注意重新設定 */
+@media (min-width: 768px) {
+    .page_info_s h4 {
+        font-size: 2rem;
+        line-height: 2;
+        border-bottom: 2px solid #44423b;
+    }
+
+    .gd_box {
+        width: 33%;
+        padding: 10px;
+    }
+
+    .gd_gallery03 h3 {
+        width: 100%;
+        text-align: center;
+        line-height: 2;
+        font-weight: normal;
+        font-size: 20px;
+        background-color: #f0edeb5b;
+
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .gd_wrapper {
+        margin: -100px auto 50px auto;
+        width: 90%;
+        max-width: 92rem;
+        position: relative;
+    }
+
+    .baygo_gd {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 10px 150px;
+    }
+
+    .typo_info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    .font_name {
+        font-size: 20px;
+    }
+
+    .font_w {
+        line-height: 2;
+        letter-spacing: 2px;
+        background-color: #B58F55;
+        padding: 3px;
+        text-align: center;
+    }
+
+    .par_box {
+        width: 50%;
+        margin: auto 0;
+        font-family: 'Minion Variable Concept';
+        font-weight: bold;
+    }
+
+    .baygo_color {
+        line-height: 2;
+        margin: 30px 40px;
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        /* 一比一的分割*/
+    }
+
+    .font_box .font {
+        font-size: 10rem;
+        color: #B58F55;
+        font-family: 'Minion Variable Concept';
+        font-weight: bold;
+    }
+
+    .baygo_typo {
+        padding-bottom: 70px;
+    }
+
+}
+
+/* PC */
+@media (min-width: 992px) {
+    .page_info_s h4 {
+        font-size: 2rem;
+        line-height: 2;
+        border-bottom: 2px solid #44423b;
+    }
+
+    .gd_box {
+        width: 33%;
+        padding: 10px;
+    }
+
+    .gd_gallery03 h3 {
+        width: 100%;
+        text-align: center;
+        line-height: 2;
+        font-weight: normal;
+        font-size: 20px;
+        background-color: #f0edeb5b;
+
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .gd_wrapper {
+        margin: -100px auto 50px auto;
+        width: 90%;
+        max-width: 92rem;
+        position: relative;
+    }
+
+    .baygo_gd {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 10px 150px;
+    }
+
+    .typo_info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px;
+    }
+
+    .font_name {
+        font-size: 20px;
+    }
+
+    .font_w {
+        line-height: 2;
+        letter-spacing: 2px;
+        background-color: #B58F55;
+        padding: 3px;
+        text-align: center;
+    }
+
+    .par_box {
+        width: 50%;
+        margin: auto 0;
+        font-family: 'Minion Variable Concept';
+        font-weight: bold;
+    }
+
+    .baygo_color {
+        line-height: 2;
+        margin: 30px 40px;
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        /* 一比一的分割*/
+    }
+
+    .font_box .font {
+        font-size: 10rem;
+        color: #B58F55;
+        font-family: 'Minion Variable Concept';
+        font-weight: bold;
+    }
+
+    .baygo_typo {
+        padding-bottom: 70px;
+    }
+}
+
+
+/* ------------------- */
+/* page web*/
+/* ------------------- */
+.page_second_web {
+    width: 60%;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.web_img {
+    width: 70%;
+}
+
+.page_second_web {
+    width: 60%;
+    position: relative;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.page_info_picture_web {
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 10px 20px 20px rgba(97, 97, 97, 0.2);
+}
+
+.page_third_web {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 80px auto;
+}
+
+.page_third_web img {
+    padding: 10px;
+}
+
+.page_third_web04 {
+    width: 35%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+/* ------------------- */
+/* page graphic*/
+/* ------------------- */
+.gd_gallery_wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.gd_gallery03 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gd_gallery04 {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin: 5px auto;
+}
+
+.color_list {
+    display: flex;
+}
+
+.font_w span {
+    color: #fff;
+}
+
+
+/* ------------------- */
+/* contact*/
+/* ------------------- */
+.card {
+    position: relative;
+    width: 75%;
+    margin: 50px auto;
+}
+
+.card_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.card_img {
+    width: 50%;
+    opacity: .9;
+}
+
+.card_inner {
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+}
+
+.card_info {
+    display: inline-block;
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+}
+
+.card_btn {
+    width: 150px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #07b53b;
+}
+
+.card_btn:hover {
+    background-color: #07b53ba2;
+}
+
+.card_btn a,
+.card_btn04 a {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.card_btn02 {
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #7c7c7c;
+}
+
+.card_btn02:hover {
+    background-color: #7c7c7c;
+    border: 1px solid #7c7c7c;
+}
+
+/* phone*/
+@media (max-width: 767px) {
+    .card {
+        width: 100%;
+    }
+
+    .card_item {
+        flex-direction: column;
+    }
+
+    .card_inner {
+        margin: 0 20px;
+    }
+
+    .card_info {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .card_container a {
+        font-size: 15px;
+    }
+
+    .btn_li {
+        margin-top: 53px;
+    }
+
+    .card_img {
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .btn_li {
+        padding: 10px;
+        margin-top: 52px;
+        text-align: center;
+        background-color: #0a66c2;
+    }
+
+}
+
+/* iPad 平板會包含桌機版，因此桌機版要注意重新設定 */
+@media (min-width: 768px) {
+    .btn_li {
+        width: 150px;
+        padding: 10px;
+        margin-top: 76px;
+        text-align: center;
+        background-color: #0a66c2;
+    }
+
+}
+
+/* PC */
+@media (min-width: 992px) {
+    .btn_li {
+        width: 150px;
+        padding: 10px;
+        margin-top: 76px;
+        text-align: center;
+        background-color: #0a66c2;
+    }
+}
+
+.btn_be {
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    background-color: #0057ff;
+}
+
+.btn_be:hover {
+    background-color: #0055ffa9;
+}
+
+.btn_li:hover {
+    background-color: #0a66c2a4;
+}
+
+/* ------------------- */
+/* footer */
+/* ------------------- */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    margin: 10px;
+    z-index: 100;
+}
+
+.footer .f_sm a,
+.footer p {
+    font-size: 10px;
+    padding: 10px;
+    color: #848484;
+}
+
+
+
+/* RWD boostrap */
+
+/* phone*/
+@media (max-width: 767px) {}
+
+/* iPad 平板會包含桌機版，因此桌機版要注意重新設定 */
+@media (min-width: 768px) {}
+
+/* PC */
+@media (min-width: 992px) {}
